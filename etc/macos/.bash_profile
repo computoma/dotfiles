@@ -112,12 +112,6 @@ if [[ "$(type -ft mise)" == "file" ]]; then
 else
 	export PROMPT_COMMAND="history -a"
 fi
-if [ "$_arch" = "arm64" ]; then
-	export MISE_AMD64_CACHE_DIR="$XDG_CACHE_HOME/mise-amd64"
-	export MISE_AMD64_CONFIG_DIR="$XDG_CONFIG_HOME/mise-amd64"
-	export MISE_AMD64_STATE_DIR="$XDG_STATE_HOME/mise-amd64"
-	export MISE_AMD64_DATA_DIR="$XDG_DATA_HOME/mise-amd64"
-fi
 
 # ============== #
 # USER FUNCTIONS #
@@ -158,20 +152,6 @@ fi
 howlong ()  {
 	system_profiler SPSoftwareDataType -detailLevel mini |
 		sed -nE 's/.*Time since boot: (.+)/\1/p'
-}
-
-# Handling mise for AMD64 under Apple Silicon
-[ "$_arch" = "arm64" ] && [ -x ~/.local/bin/mise-amd64 ] &&
-mise-amd64 () {
-	local MISE_CACHE_DIR="$MISE_AMD64_CACHE_DIR"
-	local MISE_CONFIG_DIR="$MISE_AMD64_CONFIG_DIR"
-	local MISE_STATE_DIR="$MISE_AMD64_STATE_DIR"
-	local MISE_DATA_DIR="$MISE_AMD64_DATA_DIR"
-	export MISE_CACHE_DIR
-	export MISE_CONFIG_DIR
-	export MISE_STATE_DIR
-	export MISE_DATA_DIR
-	"$HOME/.local/bin/mise-amd64" "$@"
 }
 
 # Create a directory if it doesn't exist and cd into it.

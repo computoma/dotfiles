@@ -79,12 +79,6 @@ fish_add_path --path --append "$XDG_CACHE_HOME/bun/bin"
 if type -fq mise &&
 	mise activate fish | source
 end
-if [ "$_arch" = "arm64" ]
-	set --export MISE_AMD64_CACHE_DIR "$XDG_CACHE_HOME/mise-amd64"
-	set --export MISE_AMD64_CONFIG_DIR "$XDG_CONFIG_HOME/mise-amd64"
-	set --export MISE_AMD64_STATE_DIR "$XDG_STATE_HOME/mise-amd64"
-	set --export MISE_AMD64_DATA_DIR "$XDG_DATA_HOME/mise-amd64"
-end
 
 type -fq python3 &&
 begin
@@ -128,17 +122,6 @@ end
 function howlong --description "Display for how long the computer has been turned on"
 	string match --regex --groups-only '.*Time since boot: (.+)' \
 		(system_profiler SPSoftwareDataType -detailLevel mini)
-end
-
-# Handling mise for AMD64 under Apple Silicon
-if test "$_arch" = "arm64" && test -x ~/.local/bin/mise-amd64
-function mise-amd64
-	set --local --export MISE_CACHE_DIR "$MISE_AMD64_CACHE_DIR"
-	set --local --export MISE_CONFIG_DIR "$MISE_AMD64_CONFIG_DIR"
-	set --local --export MISE_STATE_DIR "$MISE_AMD64_STATE_DIR"
-	set --local --export MISE_DATA_DIR "$MISE_AMD64_DATA_DIR"
-	~/.local/bin/mise-amd64 $argv
-end
 end
 
 function mkcd --description "Create a directory if it doesn't exist and cd into it."
