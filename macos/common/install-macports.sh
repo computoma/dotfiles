@@ -8,7 +8,7 @@
 # The following switches are available:
 # -v: Print major commands being executed.
 # -vv: Print major commands being executed and their output.
-# --uninstall: Uninstall MacPorts plus all the ports and auxilary files.
+# --uninstall: Uninstall MacPorts plus all the ports and auxiliary files.
 # --version: Select a specific version of MacPorts to be installed.
 # 	If no version is explicitly set or it's set to "latest", this script will
 # 	query and use the latest one. All available version can be found here:
@@ -42,13 +42,13 @@ check_preconds () {
 	logi "Checking pre-conditions ..."
 
 	if ! which -s curl; then
-		loge "\`curl\` is required to download macports installer."
+		loge "\`curl\` is required to download the MacPorts installer."
 		exit 1
 	fi
 }
 
 uninstall_macports () {
-	logi "Uninstalling macports ..."
+	logi "Uninstalling MacPorts ..."
 
 	logi "Uninstalling all ports ..."
 	run sudo port -fp uninstall installed
@@ -57,7 +57,7 @@ uninstall_macports () {
 	run sudo dscl . -delete /Users/macports
 	run sudo dscl . -delete /Groups/macports
 
-	logi "Removing all fliesystem artifacts ..."
+	logi "Removing all filesystem artifacts ..."
 	run sudo rm -rf /opt/local /Applications/DarwinPorts /Applications/MacPorts \
 		/Library/LaunchDaemons/org.macports.* /Library/Receipts/DarwinPorts*.pkg \
 		/Library/Receipts/MacPorts*.pkg /Library/StartupItems/DarwinPortsStartup \
@@ -83,7 +83,7 @@ install_macports () {
 	)
 
 	if [[ -z $version || $version == "latest" ]]; then
-		logi "Querying macports's latest version ..."
+		logi "Querying MacPorts's latest version ..."
 		version=$(
 			run curl --fail --location --show-error --silent \
 				--connect-timeout 13 --retry 5 --retry-delay 2 \
@@ -93,14 +93,14 @@ install_macports () {
 		logi "The latest available version is $version"
 	fi
 
-	logi "Downloading macports for macOS ${MACOS_NAME} to $MACPORTS_DOWNLOAD_DIR/macports-${version}.pkg ..."
+	logi "Downloading MacPorts for macOS ${MACOS_NAME} to $MACPORTS_DOWNLOAD_DIR/macports-${version}.pkg ..."
 	run mkdir -p "$MACPORTS_DOWNLOAD_DIR"
 	run curl --fail --location --show-error --silent \
 		--connect-timeout 13  --retry 5 --retry-delay 2 \
 		--output "$MACPORTS_DOWNLOAD_DIR/macports-${version}.pkg" \
 		"https://github.com/macports/macports-base/releases/download/v${version}/MacPorts-${version}-${MACOS_VERSION}-${MACOS_NAME}.pkg"
 
-	logi "Installing macports version $version ..."
+	logi "Installing MacPorts version $version ..."
 	run sudo installer -pkg "$MACPORTS_DOWNLOAD_DIR/macports-${version}.pkg" -target /
 }
 
