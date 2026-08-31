@@ -32,6 +32,8 @@ applicable to previous versions too.
   - Update all outdated formulae and apps: `brew upgrade --greedy`
   - Unlink specific formulae: `brew unlink python@3.14 openssl@3`
   - Purge the cache: `brew cleanup [--dry-run]`
+- Update MacPorts and its apps
+  - Update MacPorts and the local ports tree: `sudo port selfupdate`
 - Update other apps.
   - Update Azahar:`bash etc/macos/scripts/install-azahar.sh`
   - Update melonDS:`bash etc/macos/scripts/install-melonds.sh`

@@ -16,3 +16,9 @@ export HOMEBREW_DEFAULT_CASKS=(
 export HOMEBREW_EXTRA_CASKS_LAPTOP=(
 	coconutbattery keyboardcleantool
 )
+
+export MACPORTS_DEFAULT_PORTS=(
+	7zip aria2 bash bash-completion@ bat bzip2 coreutils eza fd fio fish fzf
+	gettext git-delta gsed jq lf lima miniserve mise neovim pbzip2 pigz pinentry
+	ripgrep shellcheck tokei tree typst xz zstd
+)
