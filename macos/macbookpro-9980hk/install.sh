@@ -33,7 +33,7 @@ logi "Setting up directories, dotfiles and application settings ..."
 /bin/bash "$SCRIPT_DIR"/configure.sh
 
 # Installing MacPorts and its apps.
-/bin/bash "$COMMON_DIR"/macos/install-macports.sh
+/bin/bash "$COMMON_DIR"/install-macports.sh
 /bin/bash "$SCRIPT_DIR"/install-macports-apps.sh
 
 # Installing Homebrew and Homebrew's apps.
