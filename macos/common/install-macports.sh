@@ -17,7 +17,7 @@
 set -Eeuo pipefail
 
 readonly SCRIPT_DIR="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
-readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly MACPORTS_DOWNLOAD_DIR="$TMPDIR/macports"
 VERBOSE="${VERBOSE:-0}"
 uninstall=0
