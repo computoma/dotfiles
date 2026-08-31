@@ -69,6 +69,21 @@ begin
 		set --export MANPATH "$HOMEBREW_PREFIX/share/man:$MANPATH"
 end
 
+# Under macOS for Intel add MacPorts to $PATH.
+if [ "$_arch" = "x86_64" ]
+	[ -d "/opt/local/bin" ] &&
+	! string match -q "*/opt/local/bin:*" "$PATH"  &&
+		set --export PATH "/opt/local/bin:$PATH"
+
+	[ -d "/opt/local/sbin" ] &&
+	! string match -q "*/opt/local/sbin:*" "$PATH"  &&
+		set --export PATH "/opt/local/sbin:$PATH"
+
+	[ -d "/opt/local/share/man" ] &&
+	! string match -q "*/opt/local/share/man:*" "$PATH"  &&
+		set --export MANPATH "/opt/local/share/man:$MANPATH"
+end
+
 fish_add_path --path "$HOMEBREW_PREFIX/opt/libpq/bin"
 fish_add_path --path "$HOMEBREW_PREFIX/sbin"
 fish_add_path --path "$HOMEBREW_PREFIX/bin"

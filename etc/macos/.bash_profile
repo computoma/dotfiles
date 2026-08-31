@@ -74,6 +74,21 @@ fi
 	fi
 }
 
+# Under macOS for Intel add MacPorts to $PATH.
+if [ "$_arch" = "x86_64" ]; then
+	[ -d "/opt/local/bin" ] &&
+	[[ ! ":$PATH:" == *":/opt/local/bin:"* ]] &&
+		export PATH="/opt/local/bin:$PATH"
+
+	[ -d "/opt/local/sbin" ] &&
+	[[ ! ":$PATH:" == *":/opt/local/sbin:"* ]] &&
+		export PATH="/opt/local/sbin:$PATH"
+
+	[ -d "/opt/local/share/man" ] &&
+	[[ ! ":$MANPATH:" == *":/opt/local/share/man:"* ]] &&
+		export MANPATH="/opt/local/share/man:$MANPATH"
+fi
+
 [ -n "$HOMEBREW_PREFIX" ] &&
 [ -d "$HOMEBREW_PREFIX/opt/libpq/bin:$PATH" ] &&
 [[ ! ":$PATH:" == *":$HOMEBREW_PREFIX/opt/libpq/bin:"* ]] &&
