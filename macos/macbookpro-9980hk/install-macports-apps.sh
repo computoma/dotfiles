@@ -18,5 +18,5 @@ source "$COMMON_DIR/env.sh"
 logi "Installing MacPorts ports ..."
 for port_name in "${MACPORTS_DEFAULT_PORTS[@]}"; do
 	logi "Installing $port_name ..."
-	sudo port install "$port_name"
+	sudo port -N install "$port_name"
 done
