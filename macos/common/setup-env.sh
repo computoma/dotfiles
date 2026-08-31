@@ -3,6 +3,7 @@
 
 set -Eeuo pipefail
 
+readonly CPU_ARCH="$(uname -m)"
 readonly SCRIPT_DIR="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
 readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly VERBOSE="${VERBOSE:-0}"
@@ -31,16 +32,16 @@ run defaults write com.DanPristupov.Fork fetchAllTags 0
 run defaults write com.DanPristupov.Fork fetchRemotesAutomatically 0
 run defaults write com.DanPristupov.Fork updateSubmodulesOnCheckout 0
 
-if ! grep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells; then
+if ! grep -q "$MAIN_PREFIX/bin/bash" /etc/shells; then
 	logi "Update the list of available shells ..."
-	run echo "$HOMEBREW_PREFIX/bin/bash" | run sudo tee -a /etc/shells
-	run echo "$HOMEBREW_PREFIX/bin/fish" | run sudo tee -a /etc/shells
+	run echo "$MAIN_PREFIX/bin/bash" | run sudo tee -a /etc/shells
+	run echo "$MAIN_PREFIX/bin/fish" | run sudo tee -a /etc/shells
 fi
 
-if grep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells &&
-	[[ $(dscl . -read "/Users/$USER" UserShell | cut -d' ' -f2-) != "$HOMEBREW_PREFIX/bin/bash" ]] ; then
-	logi "Setting the default user shell to $HOMEBREW_PREFIX/bin/bash ..."
-	run chsh -s "$HOMEBREW_PREFIX/bin/bash" "$(whoami)"
+if grep -q "$MAIN_PREFIX/bin/bash" /etc/shells &&
+	[[ $(dscl . -read "/Users/$USER" UserShell | cut -d' ' -f2-) != "$MAIN_PREFIX/bin/bash" ]] ; then
+	logi "Setting the default user shell to $MAIN_PREFIX/bin/bash ..."
+	run chsh -s "$MAIN_PREFIX/bin/bash" "$(whoami)"
 fi
 
 if [[ -f /etc/paths.d/homebrew ]]; then

@@ -42,7 +42,6 @@ if [ -z "$HOMEBREW_PREFIX" ]
 end
 
 [ -n "$HOMEBREW_PREFIX" ] &&
-	set --export SHELL "$HOMEBREW_PREFIX/bin/fish" &&
 	set --export HOMEBREW_CELLAR "$HOMEBREW_PREFIX/Cellar" &&
 	set --export HOMEBREW_REPOSITORY "$HOMEBREW_PREFIX/Homebrew"
 
@@ -70,18 +69,25 @@ begin
 end
 
 # Under macOS for Intel add MacPorts to $PATH.
-if [ "$_arch" = "x86_64" ]
-	[ -d "/opt/local/bin" ] &&
-	! string match -q "*/opt/local/bin:*" "$PATH"  &&
-		set --export PATH "/opt/local/bin:$PATH"
+if [ "$_arch" = "x86_64" ] && [ -d "/opt/local" ]
+	[ -z "$MACPORTS_PREFIX" ] &&
+		set --export MACPORTS_PREFIX "/opt/local" &&
+		set --export MAIN_PREFIX "$MACPORTS_PREFIX"
 
-	[ -d "/opt/local/sbin" ] &&
-	! string match -q "*/opt/local/sbin:*" "$PATH"  &&
-		set --export PATH "/opt/local/sbin:$PATH"
+	[ -d "$MACPORTS_PREFIX/bin" ] &&
+	! string match -q "*$MACPORTS_PREFIX/bin:*" "$PATH"  &&
+		set --export PATH "$MACPORTS_PREFIX/bin:$PATH"
 
-	[ -d "/opt/local/share/man" ] &&
-	! string match -q "*/opt/local/share/man:*" "$PATH"  &&
-		set --export MANPATH "/opt/local/share/man:$MANPATH"
+	[ -d "$MACPORTS_PREFIX/sbin" ] &&
+	! string match -q "*$MACPORTS_PREFIX/sbin:*" "$PATH"  &&
+		set --export PATH "$MACPORTS_PREFIX/sbin:$PATH"
+
+	[ -d "$MACPORTS_PREFIX/share/man" ] &&
+	! string match -q "*$MACPORTS_PREFIX/share/man:*" "$PATH"  &&
+		set --export MANPATH "$MACPORTS_PREFIX/share/man:$MANPATH"
+else if [ "$_arch" = "arm64" ] && [ -n "$HOMEBREW_PREFIX" ]
+	set --export MAIN_PREFIX "$HOMEBREW_PREFIX"
+	set --export SHELL "$HOMEBREW_PREFIX/bin/bash"
 end
 
 fish_add_path --path "$HOMEBREW_PREFIX/opt/libpq/bin"

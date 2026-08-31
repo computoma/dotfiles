@@ -1,0 +1,22 @@
+[settings]
+always_keep_download = true
+auto_install = false
+disable_hints = ["registry", "outdated_bump"]
+experimental = true
+plugin_autoupdate_last_check_duration = "0"
+use_versions_host = false
+
+[tools]
+node = ["24"]
+"aqua:ip7z/7zip" = { version = "latest" }
+bat = { version = "latest" }
+eza = { version = "latest" }
+fzf = { version = "latest" }
+jq = { version = "latest" }
+lima = { version = "latest" }
+miniserve = { version = "latest" }
+neovim = { version = "latest" }
+ripgrep = { version = "latest" }
+shellcheck = { version = "latest" }
+typst = { version = "latest" }
+usage = { version = "latest" }

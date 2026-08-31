@@ -18,7 +18,6 @@ export HOMEBREW_EXTRA_CASKS_LAPTOP=(
 )
 
 export MACPORTS_DEFAULT_PORTS=(
-	7zip aria2 bash bash-completion@ bat bzip2 coreutils eza fd fio fish fzf
-	gettext git-delta gsed jq lf lima miniserve mise neovim pbzip2 pigz pinentry
-	ripgrep shellcheck tokei tree typst xz zstd
+	aria2 bash bash-completion@ bzip2 coreutils fd gettext git-delta gsed lf
+	mise pbzip2 pigz pinentry tokei tree xz zstd
 )

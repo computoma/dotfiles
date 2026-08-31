@@ -47,7 +47,6 @@ if [ -z "$HOMEBREW_PREFIX" ]; then
 fi
 
 [ -n "$HOMEBREW_PREFIX" ] &&
-	export SHELL="$HOMEBREW_PREFIX/bin/bash" &&
 	export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar" &&
 	export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX"
 
@@ -75,18 +74,28 @@ fi
 }
 
 # Under macOS for Intel add MacPorts to $PATH.
-if [ "$_arch" = "x86_64" ]; then
-	[ -d "/opt/local/bin" ] &&
-	[[ ! ":$PATH:" == *":/opt/local/bin:"* ]] &&
-		export PATH="/opt/local/bin:$PATH"
+if [ "$_arch" = "x86_64" ] && [ -d "/opt/local" ]; then
+	[ -z "$MACPORTS_PREFIX" ] &&
+		export MACPORTS_PREFIX="/opt/local" &&
+		export MAIN_PREFIX="$MACPORTS_PREFIX"
 
-	[ -d "/opt/local/sbin" ] &&
-	[[ ! ":$PATH:" == *":/opt/local/sbin:"* ]] &&
-		export PATH="/opt/local/sbin:$PATH"
+	[ -d "$MACPORTS_PREFIX/bin" ] &&
+	[[ ! ":$PATH:" == *":$MACPORTS_PREFIX/bin:"* ]] &&
+		export PATH="$MACPORTS_PREFIX/bin:$PATH"
 
-	[ -d "/opt/local/share/man" ] &&
-	[[ ! ":$MANPATH:" == *":/opt/local/share/man:"* ]] &&
-		export MANPATH="/opt/local/share/man:$MANPATH"
+	[ -d "$MACPORTS_PREFIX/sbin" ] &&
+	[[ ! ":$PATH:" == *":$MACPORTS_PREFIX/sbin:"* ]] &&
+		export PATH="$MACPORTS_PREFIX/sbin:$PATH"
+
+	[ -d "$MACPORTS_PREFIX/share/man" ] &&
+	[[ ! ":$MANPATH:" == *":$MACPORTS_PREFIX/share/man:"* ]] &&
+		export MANPATH="$MACPORTS_PREFIX/share/man:$MANPATH"
+
+	export SHELL="$MACPORTS_PREFIX/bin/bash"
+
+elif [ "$_arch" = "arm64" ] && [ -n "$HOMEBREW_PREFIX" ]; then
+	export MAIN_PREFIX="$HOMEBREW_PREFIX"
+	export SHELL="$HOMEBREW_PREFIX/bin/bash"
 fi
 
 [ -n "$HOMEBREW_PREFIX" ] &&
@@ -339,7 +348,7 @@ ps1_shlevel() {
 }
 export PS1='$(ps1_date)$(ps1_shlevel) $(printf $color_fg_dark_green)\W$(printf $color_reset) $(ps1_git)'
 
-bash_completion="$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+bash_completion="$MAIN_PREFIX/etc/profile.d/bash_completion.sh"
 # shellcheck disable=SC1090
 [ -r "$bash_completion" ] &&
 	source "$bash_completion" >/dev/null

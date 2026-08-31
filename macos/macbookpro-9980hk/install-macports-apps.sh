@@ -15,6 +15,9 @@ source "$COMMON_DIR/env.sh"
 # NOTE: Executing the `portcommand without the `run` harness because it has a
 # rich TUI.
 
+logi "Updating MacPorts tree ..."
+sudo port selfupdate
+
 logi "Installing MacPorts ports ..."
 for port_name in "${MACPORTS_DEFAULT_PORTS[@]}"; do
 	logi "Installing $port_name ..."

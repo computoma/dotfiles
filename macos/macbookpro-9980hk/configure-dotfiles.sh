@@ -38,7 +38,7 @@ run cp "$ROOT_DIR/etc/tokyonight-moon.tmTheme" "$XDG_CONFIG_HOME/bat/themes"
 run cp "$ROOT_DIR/etc/zed.keymap.json" "$XDG_CONFIG_HOME/zed/keymap.json"
 run cp "$ROOT_DIR/etc/macos/config.fish" "$XDG_CONFIG_HOME/fish/"
 run cp "$ROOT_DIR/etc/macos/lfrc" "$XDG_CONFIG_HOME/lf/"
-run cp "$COMMON_DIR/etc/mise.toml" "$XDG_CONFIG_HOME/mise/config.toml"
+run cp "$SCRIPT_DIR/etc/mise.toml" "$XDG_CONFIG_HOME/mise/config.toml"
 run touch "$HOME/.bash_sessions_disable"
 run touch "$HOME/.hushlogin"
 run touch "$XDG_CONFIG_HOME/lf/bookmarks"
@@ -53,7 +53,7 @@ run sed -i '' "s|#EXTERNAL_VOLUME||" "$XDG_CONFIG_HOME/fish/config.fish"
 run sed -i '' "s|#LIMA_HOME|$XDG_CONFIG_HOME/lima|" "$HOME/.bash_profile"
 run sed -i '' "s|#LIMA_HOME|$XDG_CONFIG_HOME/lima|" "$XDG_CONFIG_HOME/fish/config.fish"
 
-[[ -z "${HOMEBREW_PREFIX+x}" ]] && exit 0
+[[ -z "${MAIN_PREFIX+x}" ]] && exit 0
 
 logi "Patching some files that require 'envsubst' ..."
 export zed_extensions="$(run cat "$COMMON_DIR/etc/zed.extensions.json")"

@@ -68,17 +68,17 @@ install_macports () {
 	readonly MACOS_VERSION=$(run sw_vers -productVersion | run cut -d. -f1)
 	readonly MACOS_NAME=$(
 		case "$MACOS_VERSION" in
-			26) run echo "Tahoe" ;;
-			15) run echo "Sequoia" ;;
-			14) run echo "Sonoma" ;;
-			13) run echo "Ventura" ;;
-			12) run echo "Monterey" ;;
-			11) run echo "BigSur" ;;
-			10.15) run echo "Catalina" ;;
-			10.14) run echo "Mojave" ;;
-			10.13) run echo "HighSierra" ;;
-			10.12) run echo "Sierra" ;;
-			*)  run echo "Unknown" ;;
+			(26) run echo "Tahoe" ;;
+			(15) run echo "Sequoia" ;;
+			(14) run echo "Sonoma" ;;
+			(13) run echo "Ventura" ;;
+			(12) run echo "Monterey" ;;
+			(11) run echo "BigSur" ;;
+			(10.15) run echo "Catalina" ;;
+			(10.14) run echo "Mojave" ;;
+			(10.13) run echo "HighSierra" ;;
+			(10.12) run echo "Sierra" ;;
+			(*) run echo "Unknown" ;;
 		esac
 	)
 
