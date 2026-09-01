@@ -39,7 +39,7 @@ run /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 /bin/bash "$COMMON_DIR"/install-homebrew.sh
 /bin/bash "$SCRIPT_DIR"/install-homebrew-apps.sh
 
-# Run configure.sh once more since a portion of the script needs tools that are
+# Run configure.sh once more since a portion of the script need tools that are
 # only available after Homebrew is installed.
 logi "Setting up directories, dotfiles and application settings, once more ..."
 /bin/bash "$SCRIPT_DIR"/configure.sh

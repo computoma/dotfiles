@@ -40,7 +40,7 @@ logi "Setting up directories, dotfiles and application settings ..."
 /bin/bash "$COMMON_DIR"/install-homebrew.sh
 /bin/bash "$SCRIPT_DIR"/install-homebrew-apps.sh
 
-# Run configure.sh once more since a portion of the script needs tools that are
+# Run configure.sh once more since a portion of the script need tools that are
 # only available after Homebrew is installed.
 logi "Setting up directories, dotfiles and application settings, once more ..."
 /bin/bash "$SCRIPT_DIR"/configure.sh
@@ -55,6 +55,11 @@ logi "Installing Mise packages ..."
 /bin/bash "$COMMON_DIR"/install-mise.sh
 logi "Installing vcpkg ..."
 /bin/bash "$ROOT_DIR"/etc/scripts/install-vcpkg.sh
+
+# Run configure.sh a third time since some dotfiles patching can only take place.
+# after mise's tools are installed.
+logi "Setting up directories, dotfiles and application settings, a third time ..."
+/bin/bash "$SCRIPT_DIR"/configure.sh
 
 logi "Installing iSMC ..."
 /bin/bash "$ROOT_DIR"/etc/macos/scripts/install-ismc.sh

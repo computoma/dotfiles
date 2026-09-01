@@ -9,6 +9,7 @@ use_versions_host = false
 [tools]
 node = ["24"]
 "aqua:ip7z/7zip" = { version = "latest" }
+"aqua:fish-shell/fish-shell" = { version = "latest" }
 bat = { version = "latest" }
 eza = { version = "latest" }
 fzf = { version = "latest" }
