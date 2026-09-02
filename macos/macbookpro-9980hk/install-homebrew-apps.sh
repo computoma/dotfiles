@@ -19,5 +19,5 @@ source "$COMMON_DIR/env.sh"
 logi "Installing Homebrew's casks ..."
 brew install --casks \
 	"${HOMEBREW_DEFAULT_CASKS[@]}" \
-	"${HOMEBREW_EXTRA_CASKS_LAPTOP}" \
+	"${HOMEBREW_EXTRA_CASKS_LAPTOP[@]}" \
 	"${HOMEBREW_EXTRA_CASKS_HOST[@]}"
