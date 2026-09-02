@@ -26,7 +26,7 @@ applicable to previous versions too.
   - Quit all apps.
   - Unlock apps: `bash etc/macos/scripts/toggle-application-lock.sh`
   - Update Homebrew environment: `brew update`
-  - Update formulae with special needs:
+  - Update formulae with special needs
     - `brew install --ignore-dependencies liblinear lua nmap`
     - `brew install --ignore-dependencies jdtls maven zls`
   - Update all outdated formulae and apps: `brew upgrade --greedy`
@@ -34,6 +34,8 @@ applicable to previous versions too.
   - Purge the cache: `brew cleanup [--dry-run]`
 - Update MacPorts and its apps
   - Update MacPorts and the local ports tree: `sudo port selfupdate`
+  - List outdated ports: `port outdated`
+  - Update outdated ports: `sudo port upgrade outdated`
 - Update other apps.
   - Update Azahar:`bash etc/macos/scripts/install-azahar.sh`
   - Update melonDS:`bash etc/macos/scripts/install-melonds.sh`
