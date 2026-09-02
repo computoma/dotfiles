@@ -55,10 +55,11 @@ run sed -i '' "s|#LIMA_HOME|$XDG_CONFIG_HOME/lima|" "$XDG_CONFIG_HOME/fish/confi
 [[ -z "${HOMEBREW_PREFIX+x}" ]] && exit 0
 
 logi "Patching some files that require 'envsubst' ..."
-export zed_extensions="$(run cat "$COMMON_DIR/etc/zed.extensions.json")"
+export fish_shell_location="$(which fish)"
 export font_size="11"
 export terminal_window_height="35"
 export terminal_window_width="150"
+export zed_extensions="$(run cat "$COMMON_DIR/etc/zed.extensions.json")"
 run rm -rf "$HOME/.gnupg/gpg-agent.conf"
 run envsubst <"$ROOT_DIR/etc/macos/ghostty.conf" >"$XDG_CONFIG_HOME/ghostty/config"
 run envsubst <"$ROOT_DIR/etc/macos/lfmarks" >"$HOME/.local/share/lf/marks"
