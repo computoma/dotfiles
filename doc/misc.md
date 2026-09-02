@@ -5,7 +5,7 @@
 ## Mise
 
 ## OBS
-- macOS H.264 and HEVC hardware encoder setup for streaming.
+- macOS H.264 hardware encoder setup for streaming.
   - Common settings
     - Rate Control: CBR
     - Keyframe Interval: 2s
