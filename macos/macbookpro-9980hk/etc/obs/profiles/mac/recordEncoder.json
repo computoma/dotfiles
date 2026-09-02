@@ -1,0 +1,6 @@
+{
+	"bitrate": 4000,
+	"limit_bitrate": true,
+	"max_bitrate_window": 2.0,
+	"keyint_sec": 5
+}
