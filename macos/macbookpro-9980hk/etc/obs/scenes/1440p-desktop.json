@@ -1,46 +1,14 @@
 {
-	"name": "Mac / Desktop",
-	"AuxAudioDevice1": {
-		"prev_ver": 537001986,
-		"name": "Mic/Aux",
-		"uuid": "4e751140-e038-40a0-a0c2-928e799b4c70",
-		"id": "coreaudio_input_capture",
-		"versioned_id": "coreaudio_input_capture",
-		"settings": {
-			"device_id": "default"
-		},
-		"mixers": 255,
-		"sync": 0,
-		"flags": 0,
-		"volume": 1.0,
-		"balance": 0.5,
-		"enabled": true,
-		"muted": false,
-		"push-to-mute": false,
-		"push-to-mute-delay": 0,
-		"push-to-talk": false,
-		"push-to-talk-delay": 0,
-		"hotkeys": {
-			"libobs.mute": [],
-			"libobs.unmute": [],
-			"libobs.push-to-mute": [],
-			"libobs.push-to-talk": []
-		},
-		"deinterlace_mode": 0,
-		"deinterlace_field_order": 0,
-		"monitoring_type": 0,
-		"private_settings": {}
-	},
+	"name": "1440p / Desktop",
 	"sources": [
 		{
 			"prev_ver": 537001986,
 			"name": "Screen",
-			"uuid": "3e42d6d4-d4c4-4b0b-b569-e06b086967f9",
+			"uuid": "5f4eb919-fba5-4a91-8137-49d827e1ea8d",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
 			"settings": {
-				"display_uuid": "23E8BAC5-EB25-4DDF-38BF-B7F87E2B3EAC",
-				"type": 0
+				"display_uuid": "B202428D-A7F3-9DFA-C87A-E5C3C65BAA09"
 			},
 			"mixers": 255,
 			"sync": 0,
@@ -66,13 +34,13 @@
 		},
 		{
 			"prev_ver": 537001986,
-			"name": "Camera / FaceTime HD",
-			"uuid": "b6e454c2-37c3-4934-92d1-66fb2775e610",
+			"name": "Camera / Logitech C920",
+			"uuid": "0887f150-a7ea-410d-8aec-78b49d5a4c2f",
 			"id": "macos-avcapture",
 			"versioned_id": "macos-avcapture",
 			"settings": {
-				"device_name": "FaceTime HD Camera (Built-in)",
-				"device": "0x8020000005ac8514",
+				"device_name": "HD Pro Webcam C920",
+				"device": "0x14120000046d082d",
 				"preset": "AVCaptureSessionPreset320x240"
 			},
 			"mixers": 255,
@@ -100,7 +68,7 @@
 				{
 					"prev_ver": 537001986,
 					"name": "Image Mask/Blend",
-					"uuid": "0e342eb1-07b3-4ba2-81bd-88f9a28ef20d",
+					"uuid": "c37b8e81-a89f-4318-a8ee-d2b057bb2bf4",
 					"id": "mask_filter",
 					"versioned_id": "mask_filter_v2",
 					"settings": {
@@ -128,7 +96,7 @@
 		{
 			"prev_ver": 537001986,
 			"name": "Desktop",
-			"uuid": "0bace864-fe87-4e16-959e-46ad5ecee9bd",
+			"uuid": "605f80f6-3d3c-43a5-b80b-e38160fb21e3",
 			"id": "scene",
 			"versioned_id": "scene",
 			"settings": {
@@ -137,13 +105,13 @@
 				"items": [
 					{
 						"name": "Screen",
-						"source_uuid": "3e42d6d4-d4c4-4b0b-b569-e06b086967f9",
+						"source_uuid": "5f4eb919-fba5-4a91-8137-49d827e1ea8d",
 						"visible": true,
 						"locked": true,
 						"rot": 0.0,
 						"scale_ref": {
-							"x": 1792.0,
-							"y": 1120.0
+							"x": 2560.0,
+							"y": 1440.0
 						},
 						"align": 5,
 						"bounds_type": 2,
@@ -156,27 +124,27 @@
 						"id": 1,
 						"group_item_backup": false,
 						"pos": {
-							"x": 96.0,
+							"x": 0.0,
 							"y": 0.0
 						},
 						"pos_rel": {
-							"x": -1.600000023841858,
+							"x": -1.7777777910232544,
 							"y": -1.0
 						},
 						"scale": {
-							"x": 0.9642857313156128,
-							"y": 0.9642857313156128
+							"x": 1.0,
+							"y": 1.0
 						},
 						"scale_rel": {
 							"x": 1.0,
 							"y": 1.0
 						},
 						"bounds": {
-							"x": 1728.0,
-							"y": 1080.0
+							"x": 2560.0,
+							"y": 1440.0
 						},
 						"bounds_rel": {
-							"x": 3.200000047683716,
+							"x": 3.555555582046509,
 							"y": 2.0
 						},
 						"scale_filter": "disable",
@@ -191,14 +159,14 @@
 						"private_settings": {}
 					},
 					{
-						"name": "Camera / FaceTime HD",
-						"source_uuid": "b6e454c2-37c3-4934-92d1-66fb2775e610",
+						"name": "Camera / Logitech C920",
+						"source_uuid": "0887f150-a7ea-410d-8aec-78b49d5a4c2f",
 						"visible": true,
 						"locked": true,
 						"rot": 0.0,
 						"scale_ref": {
-							"x": 1792.0,
-							"y": 1120.0
+							"x": 2560.0,
+							"y": 1440.0
 						},
 						"align": 5,
 						"bounds_type": 0,
@@ -211,16 +179,16 @@
 						"id": 2,
 						"group_item_backup": false,
 						"pos": {
-							"x": 1824.0,
-							"y": 848.5
+							"x": 2560.0,
+							"y": 1200.0
 						},
 						"pos_rel": {
-							"x": 1.600000023841858,
-							"y": 0.5714285373687744
+							"x": 1.7777777910232544,
+							"y": 0.6666666269302368
 						},
 						"scale": {
-							"x": -0.9642857313156128,
-							"y": 0.9642857313156128
+							"x": -1.0,
+							"y": 1.0
 						},
 						"scale_rel": {
 							"x": -1.0,
@@ -318,7 +286,7 @@
 	"saved_projectors": [],
 	"preview_locked": false,
 	"scaling_enabled": false,
-	"scaling_level": -7,
+	"scaling_level": -11,
 	"scaling_off_x": 0.0,
 	"scaling_off_y": 0.0,
 	"virtual-camera": {
