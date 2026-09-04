@@ -17,11 +17,11 @@ previous versions too.
 
 ## Updates
 - Update dotfiles `./macos/<hostname>/configure.sh`
-- Update hosts `bash macos/common/install-hosts.sh [--with-sb-hosts-variant unified]`
+- Update hosts `bash etc/scripts/install-hosts.sh --with-sb-hosts-variant unified`
 - Update iSMC `bash etc/macos/scripts/install-ismc.sh`
 - Update MongoDB Shell/Tools
   `bash etc/scripts/install-mongo-utils.sh --shell-version latest --tools-version latest`
-- Update iSMC `bash etc/scripts/install-vcpkg.sh`
+- Update vcpkg `bash etc/scripts/install-vcpkg.sh`
 - Update Homebrew's apps.
   - Quit all apps.
   - Unlock apps: `bash etc/macos/scripts/toggle-application-lock.sh`
