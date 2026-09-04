@@ -87,10 +87,6 @@ if [ "$_arch" = "x86_64" ] && [ -d "/opt/local" ]; then
 	[[ ! ":$PATH:" == *":$MACPORTS_PREFIX/sbin:"* ]] &&
 		export PATH="$MACPORTS_PREFIX/sbin:$PATH"
 
-	[ -d "$MACPORTS_PREFIX/libexec/gnubin" ] &&
-	[[ ! ":$PATH:" == *":$MACPORTS_PREFIX/libexec/gnubin:"* ]] &&
-		export PATH="$MACPORTS_PREFIX/libexec/gnubin:$PATH"
-
 	[ -d "$MACPORTS_PREFIX/share/man" ] &&
 	[[ ! ":$MANPATH:" == *":$MACPORTS_PREFIX/share/man:"* ]] &&
 		export MANPATH="$MACPORTS_PREFIX/share/man:$MANPATH"

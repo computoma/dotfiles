@@ -82,10 +82,6 @@ if [ "$_arch" = "x86_64" ] && [ -d "/opt/local" ]
 	! string match -q "*$MACPORTS_PREFIX/sbin:*" "$PATH"  &&
 		set --export PATH "$MACPORTS_PREFIX/sbin:$PATH"
 
-	[ -d "$MACPORTS_PREFIX/libexec/gnubin" ] &&
-	! string match -q "*$MACPORTS_PREFIX/libexec/gnubin:*" "$PATH"  &&
-		set --export PATH "$MACPORTS_PREFIX/libexec/gnubin:$PATH"
-
 	[ -d "$MACPORTS_PREFIX/share/man" ] &&
 	! string match -q "*$MACPORTS_PREFIX/share/man:*" "$PATH"  &&
 		set --export MANPATH "$MACPORTS_PREFIX/share/man:$MANPATH"
