@@ -92,7 +92,7 @@ if [ "$_arch" = "x86_64" ] && [ -d "/opt/local" ]; then
 		export MANPATH="$MACPORTS_PREFIX/share/man:$MANPATH"
 
 	export SHELL="$MACPORTS_PREFIX/bin/bash"
-	alias shred="$MACPORTS_PREFIX/libexec/gnubin/gshred"
+	alias shred="$MACPORTS_PREFIX/bin/gshred"
 
 elif [ "$_arch" = "arm64" ] && [ -n "$HOMEBREW_PREFIX" ]; then
 	export MAIN_PREFIX="$HOMEBREW_PREFIX"
