@@ -3,8 +3,8 @@ This guide targets macOS Tahoe but most it, if not all, is applicable to
 previous versions too.
 
 ## Preparation
-- Check if there any updates for [MongoDB Tools](https://github.com/mongodb/mongo-tools/tags)
-  and update `etc/scripts/install-mongo-utils.sh`.
+- Check for updates for [MongoDB Tools](https://github.com/mongodb/mongo-tools/tags)
+  and install them `etc/scripts/install-mongo-utils.sh`.
 - Enable maintenance services `bash etc/macos/scripts/enable-maintenance-services.sh`
 - Reboot.
 - Check for updates from Apple `softwareupdate --list`
