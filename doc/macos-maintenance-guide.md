@@ -1,6 +1,6 @@
 # macOS maintenance guide
-This guide targets macOS Tahoe but most of the guide, if not all of it, is
-applicable to previous versions too.
+This guide targets macOS Tahoe but most it, if not all, is applicable to
+previous versions too.
 
 ## Preparation
 - Check if there any updates for [MongoDB Tools](https://github.com/mongodb/mongo-tools/tags)
