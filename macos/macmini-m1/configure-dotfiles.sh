@@ -48,7 +48,7 @@ run chmod u=r,g=,o= "$HOME/.gnupg/gpg.conf"
 run chmod u=rwx,g=,o= "$HOME/.ssh"
 run chmod u=rwx,g=,o= "$HOME/.ssh/sockets"
 run chmod u+x "$HOME/.local/bin/lfpreview"
-run sed -i '' "s|#EXTERNAL_VOLUME|E1|" "$XDG_CONFIG_HOME/fish/config.fish"
+run sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/E1|" "$XDG_CONFIG_HOME/fish/config.fish"
 run sed -i '' "s|#LIMA_HOME|$XDG_CONFIG_HOME/lima|" "$HOME/.bash_profile"
 run sed -i '' "s|#LIMA_HOME|$XDG_CONFIG_HOME/lima|" "$XDG_CONFIG_HOME/fish/config.fish"
 
