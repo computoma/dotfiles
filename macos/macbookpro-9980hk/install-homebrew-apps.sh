@@ -7,7 +7,7 @@ readonly SCRIPT_DIR="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
 readonly COMMON_DIR="$(cd "$SCRIPT_DIR/../common" && pwd)"
 readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly VERBOSE="${VERBOSE:-0}"
-readonly HOMEBREW_EXTRA_CASKS_HOST=(mist)
+readonly HOMEBREW_EXTRA_CASKS_HOST=(betterdisplay mist)
 export HOMEBREW_NO_ASK=1
 
 source "$SCRIPT_DIR/env.sh"

@@ -8,9 +8,9 @@ export HOMEBREW_DEFAULT_FORMULAE=(
 )
 
 export HOMEBREW_DEFAULT_CASKS=(
-	alt-tab betterdisplay brave-browser bruno dbeaver-community
-	font-jetbrains-mono-nerd-font fork geekbench ghostty iina mac-mouse-fix obs
-	spotify transmission visual-studio-code visualdiffer zed
+	alt-tab brave-browser bruno dbeaver-community font-jetbrains-mono-nerd-font
+	fork geekbench ghostty iina mac-mouse-fix obs spotify transmission
+	visual-studio-code visualdiffer zed
 )
 
 export HOMEBREW_EXTRA_CASKS_LAPTOP=(
