@@ -14,5 +14,5 @@ validate_host
 
 logi "Patching and installing .bash_profile ..."
 run cp "$ROOT_DIR/etc/macos/.bash_profile" "$HOME/"
-run sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/E1|" "$HOME/.bash_profile"
+run sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/D1|" "$HOME/.bash_profile"
 run ln -fs "$HOME/.bash_profile" "$HOME/.bashrc"
