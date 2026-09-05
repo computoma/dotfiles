@@ -150,7 +150,7 @@ previous versions too.
     - Safari opens with: _A new private window_.
     - New windows opens with: _Empty Page_.
     - New tabs opens with: _Empty Page_.
-    - Homepage: `https://github.com/simousopas`.
+    - Homepage: `https://github.com/computoma`.
     - File download location: `~/Downloads/Safari`.
     - Disable _Open "safe" files after downloading_.
   - Set Tab layout to _Compact_.
@@ -174,7 +174,7 @@ previous versions too.
 - Manually install the latest Command Line Tools from
   [Apple Developer](https://developer.apple.com/download/all).
 - Install the SSH keys.
-- `git clone git@github.com:simousopas/hosts-setup` and  run
+- `git clone git@github.com:computoma/dotfiles` and  run
   `./macos/<hostname>/install.sh`.  Manual password input will be required a
   couple of times during the process.
 - Add _Developer Tools_ permission to _Ghostty_.
