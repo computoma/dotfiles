@@ -7,7 +7,6 @@ readonly SCRIPT_DIR="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
 readonly COMMON_DIR="$(cd "$SCRIPT_DIR/../common" && pwd)"
 readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly VERBOSE="${VERBOSE:-0}"
-readonly HOMEBREW_EXTRA_FORMULAE_HOST=(macmon)
 readonly HOMEBREW_EXTRA_CASKS_HOST=(ares-emulator signal)
 export HOMEBREW_NO_ASK=1
 
@@ -19,9 +18,7 @@ source "$COMMON_DIR/env.sh"
 # rich TUI.
 
 logi "Installing Homebrew's formulae ..."
-brew install \
-	"${HOMEBREW_DEFAULT_FORMULAE[@]}" \
-	"${HOMEBREW_EXTRA_FORMULAE_HOST[@]}"
+brew install "${HOMEBREW_DEFAULT_FORMULAE[@]}"
 brew install --ignore-dependencies liblinear lua nmap
 brew unlink openssl@3
 
