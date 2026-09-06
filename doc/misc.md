@@ -5,7 +5,7 @@
 ## Mise
 
 ## OBS
-- macOS H.264 hardware encoder setup for streaming.
+- macOS H.264 hardware encoder setup for **streaming**
   - Common settings
     - Rate Control: CBR
     - Keyframe Interval: 2s
@@ -15,23 +15,19 @@
   - Max birate per output resolution:
     - 2408x1506 and 2560x1440: 10000 Kbps
     - 3008x1692: 13000 Kbps
-    - 3072x1920 and 3024x1964: 15000 Kbps
-    - 3456x2234: 18000 Kbps
 
-- macOS HEVC hardware encoder setup for recording:
+- macOS HEVC hardware encoder setup for **recording**
   - Common settings
     - Rate Control: CRF
     - Quality: 60
     - Max bitrate window: 2s
-    - Keyframe Interval:  5s
+    - Keyframe Interval:  7s
     - Profile: main
     - Use B-Frames: ✅
     - Spatial AQ: Automatic
   - Max birate per output resolution:
-    - 2408x1506 and 2560x1440: 12000 Kbps
-    - 3008x1692: 16000 Kbps
-    - 3072x1920 and 3024x1964: 18000 Kbps
-    - 3456x2234: 22000 Kbps
+    - 2408x1506 and 2560x1440: 8000 Kbps
+    - 3008x1692: 12000 Kbps
 
 ## SSH
 - Generate new keys
