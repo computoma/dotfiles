@@ -1,0 +1,9 @@
+{
+	"rate_control": "CRF",
+	"limit_bitrate": true,
+	"max_bitrate": 10000,
+	"max_bitrate_window": 2.0,
+	"keyint_sec": 7,
+	"bframes": true,
+	"spatial_aq_mode": 1
+}
