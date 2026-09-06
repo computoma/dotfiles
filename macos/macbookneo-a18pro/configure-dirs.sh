@@ -28,4 +28,4 @@ run mkdir -p "$CODE"/{github,computoma}
 run mkdir -p "$DOCUMENTS"/{Captures,Misc,Remote}
 run mkdir -p "$DOWNLOADS"/{Brave,Misc,Safari,Torrents}
 run ln -fhs "$XDG_CACHE_HOME/container" "$HOME/Library/Application Support/com.apple.container"
-run ln -fhs "$XDG_CACHE_HOME/lima" "$HOME/Library/Caches/lima"
+run ln -fhs "$XDG_CACHE_HOME/lima" "$HOME/Library/Caches/"
