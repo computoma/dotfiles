@@ -15,7 +15,6 @@
   - Max birate per output resolution:
     - 2408x1506 and 2560x1440: 10000 Kbps
     - 3008x1692: 13000 Kbps
-
 - macOS HEVC hardware encoder setup for **recording**
   - Common settings
     - Rate Control: CRF
