@@ -13,8 +13,9 @@
     - Use B-Frames: ✅
     - Spatial AQ: Automatic
   - Max birate per output resolution:
+    - 1920x1080: 8000 Kbps
     - 2408x1506 and 2560x1440: 10000 Kbps
-    - 3008x1692: 13000 Kbps
+    - 3008x1692: 14000 Kbps
 - macOS HEVC hardware encoder setup for **recording**
   - Common settings
     - Rate Control: CRF
@@ -25,6 +26,7 @@
     - Use B-Frames: ✅
     - Spatial AQ: Automatic
   - Max birate per output resolution:
+    - 1920x1080: 6000 Kbps
     - 2408x1506 and 2560x1440: 8000 Kbps
     - 3008x1692: 12000 Kbps
 
