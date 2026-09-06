@@ -36,8 +36,11 @@ enable_maintenane_services () {
 	run sudo launchctl enable "system/com.apple.AppStoreDaemon.StorePrivilegedODRService"
 	run sudo launchctl enable "system/com.apple.AppStoreDaemon.StorePrivilegedTaskService"
 	run sudo launchctl enable "system/com.apple.dasd"
+	run sudo launchctl enable "system/com.apple.logd"
+	run sudo launchctl enable "system/com.apple.logd_helper"
 	run sudo launchctl enable "system/com.apple.mobile.softwareupdated"
 	run sudo launchctl enable "system/com.apple.softwareupdated"
+	run sudo launchctl enable "system/com.apple.syslogd"
 }
 
 parse_input_args "$@"
