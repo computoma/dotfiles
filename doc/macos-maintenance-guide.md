@@ -16,7 +16,7 @@ previous versions too.
 - Open 1st party apps and make sure they're working as intended.
 
 ## Updates
-- Update dotfiles `./macos/<hostname>/configure.sh`
+- Update dotfiles `./hosts/<hostname>/configure.sh`
 - Update hosts `bash etc/scripts/install-hosts.sh --with-sb-hosts-variant unified`
 - Update iSMC `bash etc/macos/scripts/install-ismc.sh`
 - Update MongoDB Shell/Tools
@@ -58,6 +58,6 @@ previous versions too.
   - `csrutil status`.
   - [Disable SIP](https://developer.apple.com/documentation/security/disabling-and-enabling-system-integrity-protection).
 - Disable macOS services `bash etc/macos/scripts/disable-services.sh`
-- Save any configuration changes: `./macos/<hostname>/configure-settings.sh --save`
+- Save any configuration changes: `./hosts/<hostname>/configure-settings.sh --save`
 - Open _Ghostty_ and purge all caches: `purge all` 
 - Reboot.
