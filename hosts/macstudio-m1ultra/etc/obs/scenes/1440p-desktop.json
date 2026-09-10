@@ -39,7 +39,7 @@
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
 			"settings": {
-				"display_uuid": "A65D93DD-8B65-4289-8C8D-730EFA1EC6FA"
+				"display_uuid": "87C4839F-86FA-4CD9-BE42-1C846A6A7EF3"
 			},
 			"mixers": 255,
 			"sync": 0,
@@ -71,7 +71,7 @@
 			"versioned_id": "macos-avcapture",
 			"settings": {
 				"device_name": "Studio Display Camera",
-				"device": "0x414000015bc0000",
+				"device": "0x614000015bc0000",
 				"preset": "AVCaptureSessionPreset320x240"
 			},
 			"mixers": 255,
@@ -103,7 +103,7 @@
 					"id": "mask_filter",
 					"versioned_id": "mask_filter_v2",
 					"settings": {
-						"image_path": "/Volumes/D2/Documents/Misc/obs-mask.png"
+						"image_path": "/Volumes/D3/Documents/Misc/obs-mask.png"
 					},
 					"mixers": 0,
 					"sync": 0,
