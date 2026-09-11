@@ -7,6 +7,7 @@ readonly SCRIPT_DIR="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
 readonly COMMON_DIR="$(cd "$SCRIPT_DIR/../common" && pwd)"
 readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly VERBOSE="${VERBOSE:-0}"
+readonly HOMEBREW_EXTRA_FORMULAE_HOST=(container)
 readonly HOMEBREW_EXTRA_CASKS_HOST=(
 	betterdisplay claude-code codex google-chrome mist slack tailscale-app utm
 	windows-app zoom
@@ -21,7 +22,8 @@ source "$COMMON_DIR/env.sh"
 # rich TUI.
 
 logi "Installing Homebrew's formulae ..."
-brew install "${HOMEBREW_DEFAULT_FORMULAE[@]}"
+brew install "${HOMEBREW_DEFAULT_FORMULAE[@]}" \
+	"${HOMEBREW_EXTRA_FORMULAE_HOST[@]}"
 
 # Manually handle the installation of formulae for which we're not interested
 # on their entire set of dependencies but only the necessary ones.

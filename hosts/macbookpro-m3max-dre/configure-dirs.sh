@@ -20,11 +20,12 @@ run mkdir -p "$HOME"/Library/Application\ Support/Code/User
 run mkdir -p "$HOME"/Library/Application\ Support/com.nuebling.mac-mouse-fix
 run mkdir -p "$HOME"/Library/Application\ Support/obs-studio/basic
 run mkdir -p "$XDG_CACHE_HOME"/code/{data/User,extensions}
-run mkdir -p "$XDG_CACHE_HOME"/{lima,npm}
+run mkdir -p "$XDG_CACHE_HOME"/{container,lima,npm}
 run mkdir -p "$XDG_CONFIG_HOME"/{bat/themes,fd,fish/completions}
 run mkdir -p "$XDG_CONFIG_HOME"/{ghostty,git,lf,lima}
 run mkdir -p "$XDG_CONFIG_HOME"/{mise,nvim,pip,rg,zed}
 run mkdir -p "$CODE"/{github,computoma}
 run mkdir -p "$DOCUMENTS"/{Captures,Misc,Remote}
 run mkdir -p "$DOWNLOADS"/{Brave,Misc,Safari,Torrents,UTM}
+run ln -fhs "$XDG_CACHE_HOME/container" "$HOME/Library/Application Support/com.apple.container"
 run ln -fhs "$XDG_CACHE_HOME/lima" "$HOME/Library/Caches/"
