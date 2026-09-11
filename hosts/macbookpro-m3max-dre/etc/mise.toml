@@ -1,0 +1,12 @@
+[settings]
+always_keep_download = true
+auto_install = false
+disable_hints = ["registry", "outdated_bump"]
+experimental = true
+plugin_autoupdate_last_check_duration = "0"
+use_versions_host = false
+
+[tools]
+bazel = ["9"]
+java = ["temurin-21"]
+node = ["24"]
