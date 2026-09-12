@@ -10,8 +10,8 @@ VERBOSE="${VERBOSE:-0}"
 source "$SCRIPT_DIR/env.sh"
 source "$ROOT_DIR/etc/scripts/utils.sh"
 
-# readonly ACTMON_KEY="com.apple.ActivityMonitor"
-# readonly ACTMON_FILE="$SCRIPT_DIR/etc/${ACTMON_KEY}.plist"
+readonly ACTMON_KEY="com.apple.ActivityMonitor"
+readonly ACTMON_FILE="$SCRIPT_DIR/etc/${ACTMON_KEY}.plist"
 readonly ALTTAB_KEY="com.lwouis.alt-tab-macos"
 readonly ALTTAB_FILE="$ROOT_DIR/etc/macos/${ALTTAB_KEY}.plist"
 # readonly BETTERDISPLAY_KEY="pro.betterdisplay.BetterDisplay"
@@ -36,7 +36,7 @@ parse_input_args () {
 
 install_app_settings () {
 	logi "Installing applications settings ..."
-	# run defaults import "$ACTMON_KEY" "$ACTMON_FILE"
+	run defaults import "$ACTMON_KEY" "$ACTMON_FILE"
 	run defaults import "$ALTTAB_KEY" "$ALTTAB_FILE"
 	# run defaults import "$BETTERDISPLAY_KEY" "$BETTERDISPLAY_FILE"
 	run cp "$MACMOUSEFIX_FILE" "$MACMOUSEFIX_FILE_SOURCE"
@@ -47,7 +47,7 @@ install_app_settings () {
 
 save_app_settings () {
 	logi "Exporting applications settings ..."
-	# run defaults export "$ACTMON_KEY" "$ACTMON_FILE"
+	run defaults export "$ACTMON_KEY" "$ACTMON_FILE"
 	run defaults export "$ALTTAB_KEY" "$ALTTAB_FILE"
 	# run defaults export "$BETTERDISPLAY_KEY" "$BETTERDISPLAY_FILE"
 	run cp "$MACMOUSEFIX_FILE_SOURCE" "$MACMOUSEFIX_FILE"

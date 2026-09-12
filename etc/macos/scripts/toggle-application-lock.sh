@@ -34,6 +34,8 @@ toggle_app_lock () {
 		"Azahar"
 		"Brave Browser"
 		"Bruno"
+		"ChatGPT"
+		"Claude"
 		"Docker"
 		"Orion"
 		"Google Chrome"
