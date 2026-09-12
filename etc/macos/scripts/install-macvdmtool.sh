@@ -93,7 +93,7 @@ trap 'cleanup' EXIT
 parse_input_args "$@"
 check_preconds
 if [[
-	-d "$macvdm_git_dir/macvmd" &&
+	-d "$macvdm_git_dir/macvdm" &&
 	$(run git -C "$macvdm_git_dir/macvdmtool" rev-parse --is-inside-work-tree) == "true"
 ]]; then
 	update_macvdm
