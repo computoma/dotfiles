@@ -1,4 +1,2 @@
-GitHub.copilot-chat
-Google.geminicodeassist
 anthropic.claude-code
 openai.chatgpt
