@@ -28,7 +28,7 @@ brew install "${HOMEBREW_DEFAULT_FORMULAE[@]}" \
 # Manually handle the installation of formulae for which we're not interested
 # on their entire set of dependencies but only the necessary ones.
 brew install --ignore-dependencies jdtls nmap
-brew install liblinear lua
+brew install liblinear lua pyhton@3.14
 
 # Unlink openssl@3 so the default OpenSSL is Apple's.
 brew unlink openssl@3
