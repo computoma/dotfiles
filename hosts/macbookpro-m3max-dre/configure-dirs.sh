@@ -26,7 +26,7 @@ run mkdir -p "$XDG_CONFIG_HOME"/{ghostty,git,lf,lima}
 run mkdir -p "$XDG_CONFIG_HOME"/{mise,nvim,pip,rg,zed}
 run mkdir -p "$CODE"/github/computoma
 run mkdir -p "$DOCUMENTS"/{Captures,Misc,Remote}
-run mkdir -p "$DOWNLOADS"/{Brave,Misc,Safari,Torrents,UTM}
+run mkdir -p "$DOWNLOADS"/{Chrome,Brave,Misc,Safari,Torrents,UTM}
 run ln -fhs "$XDG_CACHE_HOME/claude" "$HOME/.claude"
 run ln -fhs "$XDG_CACHE_HOME/codex" "$HOME/.codex"
 run ln -fhs "$XDG_CACHE_HOME/container" "$HOME/Library/Application Support/com.apple.container"

@@ -52,7 +52,7 @@ toggle_app_lock () {
 		"Windows App"
 		"Xenia-edge"
 		"Zed"
-		"Zoom"
+		"zoom.us.app"
 	)
 	[[ -n ${app_name:-""} ]] && apps_list=("$app_name")
 
@@ -60,16 +60,20 @@ toggle_app_lock () {
 		local app_path="/Applications/${app}.app"
 		[[ ! -d $app_path ]] && continue;
 
-		local app_flags="$(run stat -f '%Sf' "$app_path")"
+		local app_flags="$(run stat -f '%Sf %u' "$app_path")"
 
 		if echo "$app_flags" | grep -q -E "schg|uchg"; then
 			logi "Unlocking $app ..."
 			run sudo chflags -R noschg "$app_path"
-			run chflags -R nouchg "$app_path"
+			if echo "$app_flags" | grep -q -E "$(id -u)"; then
+				run chflags -R nouchg "$app_path"
+			fi
 		else
 			logi "Locking $app ..."
 			run sudo chflags -R schg "$app_path"
-			run chflags -R uchg "$app_path"
+			if echo "$app_flags" | grep -q -E "$(id -u)"; then
+				run chflags -R uchg "$app_path"
+			fi
 		fi
 	done
 }
