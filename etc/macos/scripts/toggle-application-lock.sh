@@ -52,7 +52,7 @@ toggle_app_lock () {
 		"Windows App"
 		"Xenia-edge"
 		"Zed"
-		"zoom.us.app"
+		"zoom.us"
 	)
 	[[ -n ${app_name:-""} ]] && apps_list=("$app_name")
 
