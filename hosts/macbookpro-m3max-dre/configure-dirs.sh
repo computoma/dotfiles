@@ -24,7 +24,7 @@ run mkdir -p "$XDG_CACHE_HOME"/{claude,codex,container,lima,npm}
 run mkdir -p "$XDG_CONFIG_HOME"/{bat/themes,fd,fish/completions}
 run mkdir -p "$XDG_CONFIG_HOME"/{ghostty,git,lf,lima}
 run mkdir -p "$XDG_CONFIG_HOME"/{mise,nvim,pip,rg,zed}
-run mkdir -p "$CODE"/github/computoma
+run mkdir -p "$CODE"/{computoma,dremio,github}
 run mkdir -p "$DOCUMENTS"/{Captures,Misc,Remote}
 run mkdir -p "$DOWNLOADS"/{Chrome,Brave,Misc,Safari,Torrents,UTM}
 run ln -fhs "$XDG_CACHE_HOME/claude" "$HOME/.claude"
