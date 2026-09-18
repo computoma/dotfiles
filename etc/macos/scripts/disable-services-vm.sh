@@ -8,7 +8,6 @@
 
 set -Eeuo pipefail
 
-
 readonly SCRIPT_DIR="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
 readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 VERBOSE="${VERBOSE:-0}"
@@ -35,20 +34,23 @@ disable_user_services () {
 		com.apple.AMPLibraryAgent
 		com.apple.AMPSystemPlayerAgent
 		com.apple.amsengagementd
+		com.apple.analyticsagent
 		com.apple.ap.adprivacyd
 		com.apple.ap.adservicesd
 		com.apple.ap.promotedcontentd
+		com.apple.appleseed.seedusaged
+		com.apple.appleseed.seedusaged.postinstall
 		com.apple.appstoreagent
 		com.apple.appstorecomponentsd
 		com.apple.assistant_cdmd
 		com.apple.assistant_service
 		com.apple.assistantd
 		com.apple.avconferenced
-		com.apple.betaenrollmentd
+		com.apple.betaenrollmentagent
 		com.apple.BiomeAgent
 		com.apple.biomesyncd
 		com.apple.BTServer.cloudpairing
-		com.apple.calaccessd
+		com.apple.calaccessCrashReporterSupportHelperd
 		com.apple.CalendarAgent
 		com.apple.CallHistoryPluginHelper
 		com.apple.cloudd
@@ -61,11 +63,14 @@ disable_user_services () {
 		com.apple.commerce
 		com.apple.ContactsAgent
 		com.apple.ContextStoreAgent
+		com.apple.contextstored
 		com.apple.CoreLocationAgent
 		com.apple.corespeechd
 		com.apple.dataaccess.dataaccessd
 		com.apple.diagnosticextensionsd
 		com.apple.diagnostics_agent
+		com.apple.diagnosticservicesd
+		com.apple.diagnosticspushd
 		com.apple.DiagnosticsReporter
 		com.apple.duetexpertd
 		com.apple.email.maild
@@ -73,6 +78,7 @@ disable_user_services () {
 		com.apple.familycircled
 		com.apple.familycontrols.useragent
 		com.apple.familynotificationd
+		com.apple.feedbackd
 		com.apple.financed
 		com.apple.findmy.findmylocateagent
 		com.apple.findmymacmessenger
@@ -85,6 +91,7 @@ disable_user_services () {
 		com.apple.geodMachServiceBridge
 		com.apple.helpd
 		com.apple.homed
+		com.apple.homeeventds
 		com.apple.icloud.fmfd
 		com.apple.icloud.findmydeviced.findmydevice-user-agent
 		com.apple.icloud.searchpartyuseragent
@@ -109,6 +116,7 @@ disable_user_services () {
 		com.apple.Maps.pushdaemon
 		com.apple.mediaanalysisd
 		com.apple.mediastream.mstreamd
+		com.apple.metrickitd
 		com.apple.naturallanguaged
 		com.apple.navd
 		com.apple.newsd
@@ -117,6 +125,8 @@ disable_user_services () {
 		com.apple.passd
 		com.apple.photoanalysisd
 		com.apple.photolibraryd
+		com.apple.proactived
+		com.apple.proactiveeventtrackerd
 		com.apple.progressd
 		com.apple.protectedcloudstorage.protectedcloudkeysyncing
 		com.apple.quicklook
@@ -127,6 +137,7 @@ disable_user_services () {
 		com.apple.remindd
 		com.apple.replicatord
 		com.apple.ReportCrash
+		com.apple.reversetemplated
 		com.apple.routined
 		com.apple.Safari.History
 		com.apple.Safari.PasswordBreachAgent
@@ -143,6 +154,7 @@ disable_user_services () {
 		com.apple.security.cloudkeychainproxy3
 		com.apple.security.keychain-circle-notification
 		com.apple.sharingd
+		com.apple.shazamd
 		com.apple.sidecar-hid-relay
 		com.apple.sidecar-relay
 		com.apple.Siri.agent
@@ -153,10 +165,18 @@ disable_user_services () {
 		com.apple.sirittsd
 		com.apple.SiriTTSTrainingAgent
 		com.apple.SoftwareUpdateNotificationManager
+		com.apple.speech.synthesisserver
 		com.apple.StatusKitAgent
+		com.apple.storeaccountd
+		com.apple.storeassetd
 		com.apple.storedownloadd
+		com.apple.storekitagent
+		com.apple.storelegacy
+		com.apple.studentd
 		com.apple.suggestd
+		com.apple.talagent
 		com.apple.telephonyutilities.callservicesd
+		com.apple.textunderstandingd
 		com.apple.tipsd
 		com.apple.TMHelperAgent
 		com.apple.TMHelperAgent.SetupOffer
@@ -186,12 +206,14 @@ disable_user_services () {
 disable_system_services () {
 	local system_services=(
 		com.apple.analyticsd
+		com.apple.appleseed.fbahelperd
 		com.apple.appstored
 		com.apple.AppStoreDaemon.StorePrivilegedODRService
 		com.apple.AppStoreDaemon.StorePrivilegedTaskService
 		com.apple.audioanalyticsd
 		com.apple.backupd
 		com.apple.backupd-helper
+		com.apple.betaenrollmentd
 		com.apple.biomed
 		com.apple.cloudd
 		com.apple.cloudpaird
@@ -223,7 +245,10 @@ disable_system_services () {
 		com.apple.ManagedClient.cloudconfigurationd
 		com.apple.mobile.obliteration
 		com.apple.mobile.softwareupdated
+		com.apple.modelcatalogd
+		com.apple.ModelCatalogAgent
 		com.apple.modelmanagerd
+		com.apple.osanalytics.osanalyticshelper
 		com.apple.ospredictiond
 		com.apple.protectedcloudstorage.protectedcloudkeysyncing
 		com.apple.rapportd
@@ -231,11 +256,14 @@ disable_system_services () {
 		com.apple.rtcreportingd
 		com.apple.screensharing
 		com.apple.security.cloudkeychainproxy3
-		com.apple.security.syspolicy
+		com.apple.securityuploadd
 		com.apple.siri.morphunassetsupdaterd
 		com.apple.siriinferenced
 		com.apple.softwareupdated
+		com.apple.spindump_agent
+		com.apple.sportsd
 		com.apple.syslogd
+		com.apple.SubmitDiagInfo
 		com.apple.touchbarserver
 		com.apple.triald.system
 		com.apple.wifianalyticsd
@@ -261,8 +289,6 @@ disable_system_services () {
 	done
 }
 
-trap 'cleanup ERR' ERR
-trap 'cleanup EXIT' EXIT
 parse_input_args "$@"
 disable_user_services
 disable_system_services

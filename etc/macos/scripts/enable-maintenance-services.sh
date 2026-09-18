@@ -25,6 +25,12 @@ enable_maintenane_services () {
 	local uid=$(id -u)
 	run launchctl enable "gui/$uid/com.apple.appstoreagent"
 	run launchctl enable "gui/$uid/com.apple.appstorecomponentsd"
+	run launchctl enable "gui/$uid/com.apple.commerce"
+	run launchctl enable "gui/$uid/com.apple.storeaccountd"
+	run launchctl enable "gui/$uid/com.apple.storeassetd"
+	run launchctl enable "gui/$uid/com.apple.storedownloadd"
+	run launchctl enable "gui/$uid/com.apple.storekitagent"
+	run launchctl enable "gui/$uid/com.apple.storelegacy"
 	run launchctl enable "gui/$uid/com.apple.SoftwareUpdateNotificationManager"
 
 	logi "Enabling system services ..."
