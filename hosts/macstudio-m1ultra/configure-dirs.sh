@@ -26,13 +26,16 @@ run mkdir -p "$XDG_CONFIG_HOME"/{mise,nvim,pip,rg,zed}
 run mkdir -p "$CODE"
 
 if [[ -d $EXTERNAL_VOLUME ]]; then
+	run mkdir -p "$EXTERNAL_VOLUME"/.cache/container
 	run mkdir -p "$EXTERNAL_VOLUME"/.cache/lima
 	run mkdir -p "$EXTERNAL_VOLUME"/.cache/npm
 	run mkdir -p "$EXTERNAL_VOLUME"/Developer/{github,computoma}
 	run mkdir -p "$EXTERNAL_VOLUME"/Documents/{Captures,Misc,Remote}
 	run mkdir -p "$EXTERNAL_VOLUME"/Downloads/{Brave,Misc,Safari,Torrents}
 
+	run ln -fhs "$EXTERNAL_VOLUME"/.cache/container "$XDG_CACHE_HOME"
 	run ln -fhs "$EXTERNAL_VOLUME"/.cache/lima "$XDG_CACHE_HOME"
+	run ln -fhs "$XDG_CACHE_HOME"/container "$HOME/Library/Application Support/com.apple.container"
 	run ln -fhs "$XDG_CACHE_HOME"/lima "$HOME"/Library/Caches/
 	run ln -fhs "$EXTERNAL_VOLUME"/.cache/npm "$XDG_CACHE_HOME"
 
