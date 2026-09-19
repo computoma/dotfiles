@@ -49,8 +49,8 @@ run chmod u=rwx,g=,o= "$HOME/.ssh"
 run chmod u=rwx,g=,o= "$HOME/.ssh/sockets"
 run chmod u+x "$HOME/.local/bin/lfpreview"
 run sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/D2|" "$XDG_CONFIG_HOME/fish/config.fish"
-run sed -i '' "s|#LIMA_HOME|$XDG_CONFIG_HOME/lima|" "$HOME/.bash_profile"
-run sed -i '' "s|#LIMA_HOME|$XDG_CONFIG_HOME/lima|" "$XDG_CONFIG_HOME/fish/config.fish"
+run sed -i '' "s|#LIMA_HOME||" "$HOME/.bash_profile"
+run sed -i '' "s|#LIMA_HOME||" "$XDG_CONFIG_HOME/fish/config.fish"
 
 [[ -z "${HOMEBREW_PREFIX+x}" ]] && exit 0
 

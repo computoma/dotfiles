@@ -3,7 +3,7 @@
 
 export HOMEBREW_DEFAULT_FORMULAE=(
 	7zip aria2 bash bash-completion@2 bat bzip2 coreutils eza fd fio fish fzf
-	gettext git-delta gsed jq lf lima macmon miniserve mise neovim pbzip2 pigz
+	gettext git-delta gsed jq lf macmon miniserve mise neovim pbzip2 pigz
 	pinentry ripgrep shellcheck tokei tree typst xz zstd
 )
 
