@@ -32,11 +32,6 @@ readonly APPLE_CLI_TOOLS_PATH="$(run xcode-select --print-path 2>/dev/null || tr
 logi "Setting up directories, dotfiles and application settings ..."
 /bin/bash "$SCRIPT_DIR"/configure.sh
 
-# Likely not necessary on macOS 27 and onwards.
-# Likely not necessary when installing the ARM64-only Command Line Tools.
-logi "Installing Apple Rosetta ..."
-run /usr/sbin/softwareupdate --install-rosetta --agree-to-license
-
 # Installing Homebrew and Homebrew's apps.
 /bin/bash "$COMMON_DIR"/install-homebrew.sh
 /bin/bash "$SCRIPT_DIR"/install-homebrew-apps.sh
