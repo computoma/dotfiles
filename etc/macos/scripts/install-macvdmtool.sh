@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # shellcheck source-path=SCRIPTDIR
 # shellcheck disable=SC2155
 

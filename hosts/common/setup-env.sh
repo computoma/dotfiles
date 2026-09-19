@@ -1,9 +1,8 @@
-#!/usr/bin/env /bin/bash
+#!/bin/bash
 # shellcheck disable=SC2155
 
 set -Eeuo pipefail
 
-readonly CPU_ARCH="$(uname -m)"
 readonly SCRIPT_DIR="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
 readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly VERBOSE="${VERBOSE:-0}"
