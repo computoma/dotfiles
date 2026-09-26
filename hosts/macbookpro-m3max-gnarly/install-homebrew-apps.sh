@@ -7,10 +7,10 @@ readonly SCRIPT_DIR="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
 readonly COMMON_DIR="$(cd "$SCRIPT_DIR/../common" && pwd)"
 readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly VERBOSE="${VERBOSE:-0}"
-readonly HOMEBREW_EXTRA_FORMULAE_HOST=(container)
+readonly HOMEBREW_EXTRA_FORMULAE_HOST=(container trivy)
 readonly HOMEBREW_EXTRA_CASKS_HOST=(
-	betterdisplay bruno chatgpt claude claude-code codex google-chrome mist
-	okta-verify slack tailscale-app utm windows-app zoom
+	betterdisplay bruno claude claude-code google-chrome mist okta-verify slack
+	tailscale-app utm windows-app zoom
 )
 export HOMEBREW_NO_ASK=1
 
