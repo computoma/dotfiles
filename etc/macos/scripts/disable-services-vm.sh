@@ -92,6 +92,7 @@ disable_user_services () {
 		com.apple.helpd
 		com.apple.homed
 		com.apple.homeeventds
+		com.apple.hybridsearchd
 		com.apple.icloud.fmfd
 		com.apple.icloud.findmydeviced.findmydevice-user-agent
 		com.apple.icloud.searchpartyuseragent
