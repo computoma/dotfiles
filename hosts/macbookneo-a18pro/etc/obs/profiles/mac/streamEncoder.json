@@ -1,0 +1,7 @@
+{
+	"bitrate": 6000,
+	"keyint_sec": 2,
+	"profile": "high",
+	"bframes": true,
+	"spatial_aq_mode": 1
+}
