@@ -12,6 +12,7 @@ set --export XDG_STATE_HOME "$HOME/.local/state"
 
 set --export BUN_RUNTIME_TRANSPILER_CACHE_PATH "$XDG_CACHE_HOME/bun/cache-transpiler"
 set --export CODE "$HOME/Developer"
+set --export CODEX_HOME "$XDG_CACHE_HOME/codex"
 set --export DENO_DIR "$XDG_CACHE_HOME/deno"
 set --export DENO_INSTALL_ROOT "$DENO_DIR/bin"
 set --export DENO_REPL_HISTORY "$DENO_DIR/repl_history.txt"
