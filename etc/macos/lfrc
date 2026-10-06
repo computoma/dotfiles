@@ -327,5 +327,5 @@ set promptfmt "\033[0m%d"
 set ratios 2:4
 set shell bash
 set truncatechar "…"
-set watch true
+# set watch true
 set wrapscroll
