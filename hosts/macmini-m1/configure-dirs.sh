@@ -30,7 +30,7 @@ if [[ -d $EXTERNAL_VOLUME ]]; then
 	run mkdir -p "$EXTERNAL_VOLUME"/.cache/container
 	run mkdir -p "$EXTERNAL_VOLUME"/.cache/npm
 	run mkdir -p "$EXTERNAL_VOLUME"/Developer/{github,computoma}
-	run mkdir -p "$EXTERNAL_VOLUME"/Documents/{Captures,Misc,Remote}
+	run mkdir -p "$EXTERNAL_VOLUME"/Documents/{Captures,Codex,Misc,Remote}
 	run mkdir -p "$EXTERNAL_VOLUME"/Downloads/{Brave,Misc,Safari,Torrents}
 
 	run ln -fhs "$EXTERNAL_VOLUME"/.cache/codex "$XDG_CACHE_HOME"
@@ -43,6 +43,7 @@ if [[ -d $EXTERNAL_VOLUME ]]; then
 	run ln -fhs "$EXTERNAL_VOLUME"/Developer/computoma "$CODE"
 
 	run ln -fhs "$EXTERNAL_VOLUME"/Documents/Captures "$DOCUMENTS"
+	run ln -fhs "$EXTERNAL_VOLUME"/Documents/Codex "$DOCUMENTS"
 	run ln -fhs "$EXTERNAL_VOLUME"/Documents/Misc "$DOCUMENTS"
 	run ln -fhs "$EXTERNAL_VOLUME"/Documents/Remote "$DOCUMENTS"
 
