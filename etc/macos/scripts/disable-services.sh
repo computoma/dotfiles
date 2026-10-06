@@ -5,7 +5,12 @@
 # This script is specially targeted at native macOS hosts. It disables a set of
 # macOS services that are not fundamentally required, therefore freeing up RAM
 # and CPU resources.
-# Notice that this only works if SIP is disabled.
+
+# NOTES
+# - com.apple.talagent: Disabling it causes user background apps to start
+#   substantially delayed. First noticed on macOS Tahoe 26.7.1.
+# - com.apple.duetexpertd and com.apple.coreduetd: Disabling them causes the
+#   Spolight app search widget to start empty.
 
 set -Eeuo pipefail
 
@@ -177,7 +182,7 @@ disable_user_services () {
 		com.apple.storelegacy
 		com.apple.studentd
 		com.apple.suggestd
-		com.apple.talagent
+		# com.apple.talagent
 		# com.apple.telephonyutilities.callservicesd
 		com.apple.textunderstandingd
 		com.apple.tipsd
