@@ -188,6 +188,7 @@ disable_user_services () {
 		com.apple.tipsd
 		com.apple.TMHelperAgent
 		com.apple.TMHelperAgent.SetupOffer
+		com.apple.translationd
 		com.apple.transparencyd
 		com.apple.triald
 		# com.apple.universalaccessd
