@@ -1,0 +1,12 @@
+{
+	"rate_control": "CBR",
+	"quality": 61,
+	"limit_bitrate": true,
+	"max_bitrate": 8000,
+	"max_bitrate_window": 2.0,
+	"keyint_sec": 2,
+	"profile": "high",
+	"bframes": true,
+	"spatial_aq_mode": 1,
+	"bitrate": 8000
+}
