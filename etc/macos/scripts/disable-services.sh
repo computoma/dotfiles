@@ -11,6 +11,8 @@
 #   substantially delayed. First noticed on macOS Tahoe 26.7.1.
 # - com.apple.duetexpertd and com.apple.coreduetd: Disabling them causes the
 #   Spolight app search widget to start empty.
+# - com.apple.translationd: Disabling it makes the Messages app and launchd spin
+#   the CPU.
 
 set -Eeuo pipefail
 
@@ -188,7 +190,7 @@ disable_user_services () {
 		com.apple.tipsd
 		com.apple.TMHelperAgent
 		com.apple.TMHelperAgent.SetupOffer
-		com.apple.translationd
+		# com.apple.translationd
 		com.apple.transparencyd
 		com.apple.triald
 		# com.apple.universalaccessd
