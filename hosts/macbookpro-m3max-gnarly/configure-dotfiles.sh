@@ -4,7 +4,6 @@
 set -Eeuo pipefail
 
 readonly SCRIPT_DIR="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
-readonly COMMON_DIR="$(cd "$SCRIPT_DIR/../common" && pwd)"
 readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly VERBOSE="${VERBOSE:-0}"
 readonly APP_SUPPORT_FOLDER="$HOME/Library/Application Support"
