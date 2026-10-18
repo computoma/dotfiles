@@ -1,2 +1,1 @@
-anthropic.claude-code
 openai.chatgpt

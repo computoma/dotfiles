@@ -9,7 +9,7 @@ readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly VERBOSE="${VERBOSE:-0}"
 readonly HOMEBREW_EXTRA_FORMULAE_HOST=(container trivy)
 readonly HOMEBREW_EXTRA_CASKS_HOST=(
-	betterdisplay bruno claude claude-code google-chrome mist okta-verify slack
+	betterdisplay bruno claude claude-code google-chrome mist slack
 	tailscale-app utm windows-app zoom
 )
 export HOMEBREW_NO_ASK=1

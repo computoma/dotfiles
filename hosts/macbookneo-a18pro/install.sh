@@ -61,6 +61,8 @@ logi "Installing macvdmtool ..."
 logi "Installing VSCode's extensions ..."
 /bin/bash "$ROOT_DIR"/etc/scripts/install-vscode-extensions.sh \
 	--extensions-list "$COMMON_DIR"/etc/vscode.extensions.txt
+/bin/bash "$ROOT_DIR"/etc/scripts/install-vscode-extensions.sh \
+	--extensions-list "$COMMON_DIR"/etc/vscode.extensions.ai.txt
 
 logi "Taking care of the remaining environment settings ..."
 /bin/bash "$COMMON_DIR"/setup-env.sh

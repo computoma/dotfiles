@@ -55,14 +55,11 @@ logi "Installing vcpkg ..."
 logi "Installing iSMC ..."
 /bin/bash "$ROOT_DIR"/etc/macos/scripts/install-ismc.sh
 
-logi "Installing macvdmtool ..."
-/bin/bash "$ROOT_DIR"/etc/macos/scripts/install-macvdmtool.sh
-
 logi "Installing VSCode's extensions ..."
 /bin/bash "$ROOT_DIR"/etc/scripts/install-vscode-extensions.sh \
 	--extensions-list "$COMMON_DIR"/etc/vscode.extensions.txt
 /bin/bash "$ROOT_DIR"/etc/scripts/install-vscode-extensions.sh \
-	--extensions-list "$COMMON_DIR"/etc/vscode.extensions.ai.txt
+	--extensions-list "$COMMON_DIR"/etc/vscode.extensions.ai@work.txt
 /bin/bash "$ROOT_DIR"/etc/scripts/install-vscode-extensions.sh \
 	--extensions-list "$COMMON_DIR"/etc/vscode.extensions.java.txt
 
