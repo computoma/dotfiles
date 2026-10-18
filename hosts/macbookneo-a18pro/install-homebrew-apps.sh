@@ -23,7 +23,7 @@ brew install \
 	"${HOMEBREW_DEFAULT_FORMULAE[@]}" \
 	"${HOMEBREW_EXTRA_FORMULAE_HOST[@]}"
 brew install --ignore-dependencies liblinear lua nmap
-brew unlink openssl@3
+brew unlink openssl@4
 
 logi "Installing Homebrew's casks ..."
 brew install --casks \
