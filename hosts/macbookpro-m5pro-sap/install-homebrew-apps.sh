@@ -30,8 +30,9 @@ brew install "${HOMEBREW_DEFAULT_FORMULAE[@]}" \
 brew install --ignore-dependencies jdtls nmap
 brew install liblinear lua python@3.15
 
-# Unlink openssl@3 so the default OpenSSL is Apple's.
+# Unlink openssl@4 so the default OpenSSL is Apple's.
 brew unlink openssl@4
+brew unlink python@3.15
 
 logi "Installing Homebrew's casks ..."
 brew install --casks \
