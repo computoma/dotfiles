@@ -9,7 +9,7 @@ readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly VERBOSE="${VERBOSE:-0}"
 readonly HOMEBREW_EXTRA_FORMULAE_HOST=(container)
 readonly HOMEBREW_EXTRA_CASKS_HOST=(
-	betterdisplay chatgpt codex mist signal spotify
+	betterdisplay chatgpt codex mist signal spotify transmission
 )
 export HOMEBREW_NO_ASK=1
 

@@ -9,7 +9,7 @@ export HOMEBREW_DEFAULT_FORMULAE=(
 
 export HOMEBREW_DEFAULT_CASKS=(
 	alt-tab brave-browser dbeaver-community font-jetbrains-mono-nerd-font fork
-	geekbench ghostty iina mac-mouse-fix obs transmission visual-studio-code zed
+	geekbench ghostty iina mac-mouse-fix obs visual-studio-code zed
 )
 
 export HOMEBREW_EXTRA_CASKS_LAPTOP=(
