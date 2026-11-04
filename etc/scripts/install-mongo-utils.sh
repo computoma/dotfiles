@@ -124,7 +124,7 @@ install_mongodb_shell () {
 }
 
 install_mongodb_tools () {
-	[[ "$mongodb_tools_version" == "latest" ]] && mongodb_tools_version="100.18.0"
+	[[ "$mongodb_tools_version" == "latest" ]] && mongodb_tools_version="100.20.1"
 
 	logi "Downloading MongoDB Tools version ${mongodb_tools_version} ..."
 	run curl --fail --location --show-error --silent \
