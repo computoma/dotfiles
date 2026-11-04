@@ -1,5 +1,4 @@
 [settings]
-always_keep_download = true
 auto_install = false
 disable_hints = ["registry", "outdated_bump"]
 experimental = true
