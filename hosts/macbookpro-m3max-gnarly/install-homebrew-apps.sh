@@ -9,8 +9,8 @@ readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly VERBOSE="${VERBOSE:-0}"
 readonly HOMEBREW_EXTRA_FORMULAE_HOST=(container trivy)
 readonly HOMEBREW_EXTRA_CASKS_HOST=(
-	betterdisplay bruno chatgpt claude claude-code codex google-chrome mist
-	slack tailscale-app utm windows-app zoom
+	betterdisplay bruno chatgpt claude claude-code codex google-chrome
+	microsoft-teams slack tailscale-app utm windows-app zoom
 )
 export HOMEBREW_NO_ASK=1
 
@@ -27,8 +27,8 @@ brew install "${HOMEBREW_DEFAULT_FORMULAE[@]}" \
 
 # Manually handle the installation of formulae for which we're not interested
 # on their entire set of dependencies but only the necessary ones.
-brew install --ignore-dependencies jdtls nmap
-brew install liblinear lua python@3.15
+brew install --ignore-dependencies jdtls lua nmap
+brew install liblinear python@3.15
 
 # Unlink openssl@4 so the default OpenSSL is Apple's.
 brew unlink openssl@4
