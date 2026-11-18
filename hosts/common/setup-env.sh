@@ -23,13 +23,14 @@ run defaults write -g KeyRepeat -int 1
 run defaults write -g NSWindowShouldDragOnGesture -bool true
 run killall Dock
 
-logi "Setting defaults for Fork ..."
+logi "Setting defaults for desktop apps ..."
 run defaults write com.DanPristupov.Fork SUEnableAutomaticChecks 0
 run defaults write com.DanPristupov.Fork applicationUpdateChannel 1
 run defaults write com.DanPristupov.Fork defaultSourceFolder "$CODE"
 run defaults write com.DanPristupov.Fork fetchAllTags 0
 run defaults write com.DanPristupov.Fork fetchRemotesAutomatically 0
 run defaults write com.DanPristupov.Fork updateSubmodulesOnCheckout 0
+run launchctl setenv CODEX_SPARKLE_ENABLED false
 
 if ! grep -q "$MAIN_PREFIX/bin/bash" /etc/shells; then
 	logi "Update the list of available shells ..."
