@@ -1,0 +1,28 @@
+#!/bin/bash
+# shellcheck disable=SC2155
+
+set -Eeuo pipefail
+
+readonly SCRIPT_DIR="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
+readonly ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
+readonly VERBOSE="${VERBOSE:-0}"
+
+source "$SCRIPT_DIR/env.sh"
+source "$ROOT_DIR/etc/scripts/utils.sh"
+
+validate_host
+
+logi "Creating the directories structure ..."
+run mkdir -p "$HOME"/{.bash_completion.d,.gnupg,.ssh/sockets}
+run mkdir -p "$HOME"/.local/{bin,share/lf}
+run mkdir -p "$HOME"/Library/{KeyBindings,LaunchAgents}
+run mkdir -p "$HOME"/Library/Application\ Support/Code/User
+run mkdir -p "$HOME"/Library/Application\ Support/com.nuebling.mac-mouse-fix
+run mkdir -p "$HOME"/Library/Application\ Support/obs-studio/basic
+run mkdir -p "$XDG_CACHE_HOME"/codex
+run mkdir -p "$XDG_CONFIG_HOME"/{bat/themes,fd,fish/completions}
+run mkdir -p "$XDG_CONFIG_HOME"/{git,lf}
+run mkdir -p "$XDG_CONFIG_HOME"/{nvim,pip,rg,zed}
+run mkdir -p "$CODE"/computoma
+run mkdir -p "$DOCUMENTS"/Captures
+run ln -fhs "$XDG_CACHE_HOME/codex" "$HOME"/.codex
